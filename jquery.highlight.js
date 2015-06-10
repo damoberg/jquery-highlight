@@ -122,7 +122,7 @@
         var flag = settings.caseSensitive ? '' : 'i';
         var pattern = '(' + words.join('|') + ')';
         if (settings.wordsOnly) {
-            pattern = '\\b' + pattern + '\\b';
+            pattern = '(?:^|\\s)' + pattern + '(?:$|\\s)';
         }
         var re = new RegExp(pattern, flag);
         
